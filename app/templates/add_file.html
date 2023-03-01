@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="page-header">File Upload</h1>
+<form class="" action="{{ url_for('add_file') }}" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="file">Upload your file</label>
+    <input type="file" name="file" class="form-control" />
+  </div>
+  <button type="submit" name="submit" class="btn btn-primary">Save file</button>
+</form>
+{% endblock %}
