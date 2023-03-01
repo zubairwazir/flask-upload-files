@@ -1,9 +1,3 @@
-"""
-Flask Documentation:     http://flask.pocoo.org/docs/
-Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
-Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
-This file creates your application.
-"""
 import os
 from app import app
 from flask import render_template, request, redirect, url_for, flash, session, abort
@@ -23,7 +17,8 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Zubair Ahmad")
+
 
 @app.route('/add', methods=['POST', 'GET'])
 def add_file():
@@ -42,6 +37,7 @@ def add_file():
 
     return render_template('add_file.html')
 
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     error = None
@@ -53,6 +49,7 @@ def login():
             # flash('You were logged in')
             return redirect(url_for('add_file'))
     return render_template('login.html', error=error)
+
 
 @app.route('/logout')
 def logout():
@@ -90,4 +87,4 @@ def page_not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0",port="8080")
+    app.run(debug=True, host="0.0.0.0", port="8080")
